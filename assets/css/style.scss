@@ -2,7 +2,8 @@
 ---
 // Text
 $section-headings-color: #0086b3;
-$body-text-color: #111111;
-$body-link-color: #111111;
-$blockquote-text-color: #111111;
 @import "{{ site.theme }}";
+
+section h1 {
+	color: red;
+}

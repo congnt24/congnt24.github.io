@@ -1,3 +1,8 @@
+---
+layout: page
+title: About
+permalink: /about/
+---
 # About me
 ![Avatar](https://farm5.staticflickr.com/4263/35080173910_7c5b6958c6_o_d.png)
 [![Linked In](https://farm5.staticflickr.com/4258/35299842052_10b82c6dc1_o_d.png)](https://linkedin.com)

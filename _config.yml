@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
 
-title: Welcome to Cong Nguyen BLog
+title: Cong Nguyen Blog
 description: Sharing knowledge for better develop
 author: Cong Nguyen
 email: congnt24@gmail.com
@@ -23,4 +23,7 @@ theme: minima
 exclude:
   - Gemfile
   - Gemfile.lock
+# Seo
+gems:
+  - jekyll-seo-tag
 

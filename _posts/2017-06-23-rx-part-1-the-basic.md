@@ -4,7 +4,6 @@ title: "Rx part 1: Introduction to Rx"
 categories: reactive
 ---
 
-# Rx: The basic
 ## 1. What is Rx
 Rx is stand for Reactive X. It mean you're ready for an event and when the event happend, you'll react to the event. 
 

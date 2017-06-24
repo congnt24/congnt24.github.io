@@ -4,7 +4,6 @@ title: "Rx part 2: Observable and Observer"
 categories: reactive
 ---
 
-# RX: Observable and Observer
 Observer and Observable are the main objects in RX.
 ## 1. Observable
 Observable like a publisher, It's role is to push data/event to all it's subscriber(observer). RX support 3 type of event to push: 

@@ -4,7 +4,6 @@ title: "Rx part 3: Basic Operators"
 categories: reactive
 ---
 
-# Rx: Basic Operators
 ## 1. Map
 
 ## 2. FlatMap

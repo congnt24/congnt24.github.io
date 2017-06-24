@@ -19,7 +19,6 @@ Observable.from([1,2,3,4,5,6]).map{ $0 * 2 } //RxSwift
 It's work perfectly when using with a list single object. But if we have a list of array and you want the result is similar to above example, for example if we have a list of array: 
 
 ```
-{{1,2,3}, {4,5,6}} //Java
 arrayOf(arrayOf(1,2,3), arrayOf(4,5,6)) //Kotlin
 [[1,2,3],[4,5,6]] //Swift
 ```

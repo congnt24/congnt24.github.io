@@ -4,7 +4,21 @@ title: "Rx part 3: Basic Operators"
 categories: reactive
 ---
 
-## 1. Map
+## 1. Filter
+Emit only those items from an Observable that pass a predicate test
+
+![Filter](https://qiita-image-store.s3.amazonaws.com/0/59803/ea70f5e1-567b-75cf-6043-71fd27d7387e.png)
+
+The Filter operator filters an Observable by only allowing items through that pass a test that you specify in the form of a predicate function.
+
+Example:
+
+```java
+//filter even number
+Observable.just(1,2,3,4,5,6).filter { it % 2 == 0 } // == Observable.just(2,4,6)
+```
+
+## 2. Map
 Transform the items emitted by an Observable by applying a function to each item
 ![Map](https://i.stack.imgur.com/P6C2t.png)
 
@@ -24,7 +38,7 @@ arrayOf(arrayOf(1,2,3), arrayOf(4,5,6)) //Kotlin
 ```
 
 When you using map operator for this list, you can only transform Array -> Array. So, you can't multiple to 2 for each Number. In this case, instead of map, we use flatMap.
-## 2. FlatMap
+## 3. FlatMap
 Transform the items emitted by an Observable into Observables, then flatten the emissions from those into a single Observable
 ![FlatMap](http://reactivex.io/documentation/operators/images/flatMap.c.png)
 
@@ -47,7 +61,7 @@ Observable.just(arrayOf(1,2), arrayOf(3,4))
 Inside flatmap, you have to return an Observable instead of Object.
 
 
-## 3. SwitchMap & FlatMapLatest
+## 4. SwitchMap & FlatMapLatest
 SwitchMap in RxJava very similar to FlatMapLatest in RxSwift.
 I have an example: I have an SearchBox and using Rx to handle text change event of the SearchBox. Whenever a new char is appended to the box, the observable emit an item(current string in box). Each item received, I using flatMap to request to server and get response. 
 

@@ -7,20 +7,20 @@ categories: reactive
 ## 1. Observable.just(element)
 In RxJava, Observable.just() will emit each parameters. The max params is 10
 
-```
+```java
 Observable.just(1,2,3) // Will emit onNext(1), onNext(2), onNext(3), onComplete()
 ```
 
 In RxSwift, Observable.just() only emit one time
 
-```
+```swift
 Onservable.just(1,2,3) // Will emit onNext(1,2,3) and onComplete()
 ```
 
 ## 2. Observable.from(array)
 Using it when you have an array and you want to emit each item in the array
 
-```
+```swift
 Observale.from([1,2,3]) // Will emit onNext(1), onNext(2), onNext(3), onComplete()
 ```
 
@@ -30,7 +30,7 @@ The below statement will emit data each 1s.
 
 RxKotlin
 
-```
+```java
 Observable.interval(0, 1000, TimeUnit.MILLISECONDS)
 	.subscribe( { println("Hello world") }) // == onNext
 Thread.sleep(10000)

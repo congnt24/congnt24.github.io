@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rx part 1: Introduction to Rx</title>
+  <meta name="description" content="1. What is Rx Rx is stand for Reactive X. It mean you’re ready for an event and when the event happend, you’ll react to the event.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/reactive/2017/06/23/rx-part-1-the-basic.html">
+  <link rel="alternate" type="application/rss+xml" title="Cong Nguyen Blog" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Cong Nguyen Blog</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/categories/">Categories</a>
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Rx part 1: Introduction to Rx</h1>
+    <p class="post-meta">
+      <time datetime="2017-06-23T00:00:00+07:00" itemprop="datePublished">
+        
+        Jun 23, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="1-what-is-rx">1. What is Rx</h2>
+<p>Rx is stand for Reactive X. It mean you’re ready for an event and when the event happend, you’ll react to the event.</p>
+
+<p><strong>For example:</strong> In an Chat application, when you send a message you need to do two thing: Save it to local DB and send the request to server.</p>
+
+<ul>
+  <li>
+    <p><strong>The traditional approach:</strong> You need to call a function for saving data to DB and other function for sending message to server.</p>
+  </li>
+  <li>
+    <p><strong>RX approach:</strong> You only need to call a function to save data in DB. Because we have a subscriber alway listen to the change of publisher(DB), when data in DB is changed, the subscriber will REACT to the change and send message to server.</p>
+  </li>
+</ul>
+
+<p>Reactive X is the combine of <strong>Observable Pattern</strong> and <strong>Iterator Pattern</strong>:</p>
+
+<p>Why Observable Pattern? because It use the concept of Observable, It will have a observable(publisher) and many observer(subscriber) -&gt; It’s similar to subscribing on youtube channel.</p>
+
+<p>Why Iterator Pattern? because observable(publisher) emit(publish) an event(object) whenever it has. It’s similar to loop for an array.</p>
+
+<p>Now you known exactly what is reactive x and how it work. But you will wonder why you need to learn RX, why RX is better then traditional approach, and what is the advantage and disadvantage of RX. You will see it in the next sextion and you will love it after going through all the article of this serial.</p>
+
+<h2 id="2-why-rx">2. Why Rx?</h2>
+<p>Nowaday, ReactiveX become so popular in many programing language suck as: RxJava for Java and Android development, RxSwift, RxJs…
+Using Rx help you control your flow/code easier, your code will be more concise, help you create realtime application and applying MVVM architechture.</p>
+
+<p>For example: when you need to execute an async call like: network call</p>
+
+<p>Traditional(Android): Using Asynctask</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleTask</span> <span class="kd">extends</span> <span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">,</span><span class="n">Void</span><span class="o">,</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Users</span><span class="o">&gt;&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">SampleAdapter</span> <span class="n">mAdapter</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">SampleTask</span><span class="o">(</span><span class="n">SampleAdapter</span> <span class="n">sampleAdapter</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">mAdapter</span> <span class="o">=</span> <span class="n">sampleAdapater</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Users</span><span class="o">&gt;</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">Void</span><span class="o">...</span> <span class="n">voids</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//Call API here</span>
+        <span class="k">return</span> <span class="nf">fetchUsers</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostExecute</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Users</span><span class="o">&gt;</span> <span class="n">users</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onPostExecute</span><span class="o">(</span><span class="n">products</span><span class="o">);</span>
+        <span class="c1">//Receive data and update UI here</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>RxJava: concise, easy to use and understand</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fetchUsers</span><span class="o">()</span>        
+		<span class="o">.</span><span class="na">subscribeOn</span><span class="o">(</span><span class="n">Schedulers</span><span class="o">.</span><span class="na">io</span><span class="o">())</span>	<span class="c1">//use io thread</span>
+        <span class="o">.</span><span class="na">observeOn</span><span class="o">(</span><span class="n">AndroidSchedulers</span><span class="o">.</span><span class="na">mainThread</span><span class="o">())</span> <span class="c1">//use main thread for update ui</span>
+        <span class="o">.</span><span class="na">subscribe</span><span class="o">(</span><span class="k">new</span> <span class="n">Subscriber</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;()</span> <span class="o">{</span>
+                       <span class="nd">@Override</span>
+                       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCompleted</span><span class="o">()</span> <span class="o">{</span>
+                       <span class="o">}</span>
+
+                       <span class="nd">@Override</span>
+                       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="n">Throwable</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                           <span class="c1">//Handle error</span>
+                       <span class="o">}</span>
+
+                       <span class="nd">@Override</span>
+                       <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNext</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+                           <span class="c1">//Handle success</span>
+                       <span class="o">}</span>
+                   <span class="o">}</span>
+        <span class="o">);</span>
+</code></pre>
+</div>
+
+<p>This article just an introduce about RX. There are many more useful feature in ReactiveX that will help you a lot in develop application. I will show you in the next article.</p>
+
+<p>Thank your for reading.</p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Cong Nguyen Blog</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Cong Nguyen
+            
+            </li>
+            
+            <li><a href="mailto:congnt24@gmail.com">congnt24@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/congnt24"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">congnt24</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Sharing knowledge for better develop</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

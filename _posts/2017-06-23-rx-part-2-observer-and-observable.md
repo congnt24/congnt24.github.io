@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Observable and Observer in Rx"
+title: "Rx part 2: Observable and Observer"
 categories: reactive
 ---
 

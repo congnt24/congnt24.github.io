@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introduction to Rx"
+title: "Rx part 1: Introduction to Rx"
 categories: reactive
 ---
 

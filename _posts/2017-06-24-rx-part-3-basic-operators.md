@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rx Basic Operators"
+title: "Rx part 3: Basic Operators"
 categories: reactive
 ---
 

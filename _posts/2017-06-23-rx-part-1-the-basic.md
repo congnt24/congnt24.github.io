@@ -4,8 +4,8 @@ title: "Rx part 1: Introduction to Rx"
 categories: reactive
 ---
 
-#Rx: The basic
-##1. What is Rx
+# Rx: The basic
+## 1. What is Rx
 Rx is stand for Reactive X. It mean you're ready for an event and when the event happend, you'll react to the event. 
 
 **For example:** In an Chat application, when you send a message you need to do two thing: Save it to local DB and send the request to server.
@@ -23,7 +23,7 @@ Why Iterator Pattern? because observable(publisher) emit(publish) an event(objec
 
 Now you known exactly what is reactive x and how it work. But you will wonder why you need to learn RX, why RX is better then traditional approach, and what is the advantage and disadvantage of RX. You will see it in the next sextion and you will love it after going through all the article of this serial.
 
-##2. Why Rx?
+## 2. Why Rx?
 Nowaday, ReactiveX become so popular in many programing language suck as: RxJava for Java and Android development, RxSwift, RxJs...
 Using Rx help you control your flow/code easier, your code will be more concise, help you create realtime application and applying MVVM architechture.
 

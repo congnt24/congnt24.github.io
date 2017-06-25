@@ -3,7 +3,7 @@ layout: post
 title: "Rx part 5: Debounce, throttle and Implement search box"
 categories: reactive
 comments: true
-image: "https://cdn.css-tricks.com/wp-content/uploads/2016/04/debounce-leading.png"
+image: "https://farm5.staticflickr.com/4216/35516906345_c6b858f9d0_o_d.jpg"
 tags: [android, java, kotlin, swift, rx]
 ---
 

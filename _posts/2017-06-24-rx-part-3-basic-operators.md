@@ -2,14 +2,18 @@
 layout: post
 title: "Rx part 3: Basic Operators"
 categories: reactive
+image: "https://farm5.staticflickr.com/4205/35384569371_71d868999a_o_d.jpg"
+tags: [android, java, kotlin, swift, rx]
 ---
 
-## 1. Filter
+## Filter
 Emit only those items from an Observable that pass a predicate test
 
-![Filter](https://qiita-image-store.s3.amazonaws.com/0/59803/ea70f5e1-567b-75cf-6043-71fd27d7387e.png)
-
 The Filter operator filters an Observable by only allowing items through that pass a test that you specify in the form of a predicate function.
+
+<!--more-->
+
+<img class="post-image" src="https://qiita-image-store.s3.amazonaws.com/0/59803/ea70f5e1-567b-75cf-6043-71fd27d7387e.png" alt="Filter"/>
 
 Example:
 
@@ -18,11 +22,12 @@ Example:
 Observable.just(1,2,3,4,5,6).filter { it % 2 == 0 } // == Observable.just(2,4,6)
 ```
 
-## 2. Map
+## Map
 Transform the items emitted by an Observable by applying a function to each item
-![Map](https://i.stack.imgur.com/P6C2t.png)
 
-Example:
+<img class="post-image" src="https://i.stack.imgur.com/P6C2t.png" alt="Map"/>
+
+**Example:**
 
 ```
 Observable.just(1,2,3,4,5,6).map { it * 2 } //RxKotlin
@@ -38,9 +43,10 @@ arrayOf(arrayOf(1,2,3), arrayOf(4,5,6)) //Kotlin
 ```
 
 When you using map operator for this list, you can only transform Array -> Array. So, you can't multiple to 2 for each Number. In this case, instead of map, we use flatMap.
-## 3. FlatMap
-Transform the items emitted by an Observable into Observables, then flatten the emissions from those into a single Observable
-![FlatMap](http://reactivex.io/documentation/operators/images/flatMap.c.png)
+## FlatMap
+Transform the items emitted by an Observable into Observables, then flatten the
+
+<img class="post-image" src="http://reactivex.io/documentation/operators/images/flatMap.c.png" alt="Flatmap"/>
 
 RxSwift
 
@@ -61,7 +67,7 @@ Observable.just(arrayOf(1,2), arrayOf(3,4))
 Inside flatmap, you have to return an Observable instead of Object.
 
 
-## 4. SwitchMap & FlatMapLatest
+## SwitchMap & FlatMapLatest
 SwitchMap in RxJava very similar to FlatMapLatest in RxSwift.
 I have an example: I have an SearchBox and using Rx to handle text change event of the SearchBox. Whenever a new char is appended to the box, the observable emit an item(current string in box). Each item received, I using flatMap to request to server and get response. 
 
@@ -74,7 +80,7 @@ But we only need the respone of last item. So, 4 previous request is not need an
 
 That's why SwitchMap/FlatMapLatest was born. If It receive a new item while processing other item, the older item will be cancel and execute newer item.
 
-![SwitchMap](https://i.stack.imgur.com/Tn8KA.png)
+<img class="post-image" src="https://i.stack.imgur.com/Tn8KA.png" alt="switchMap" />
 
 Example:
 

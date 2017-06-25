@@ -2,17 +2,20 @@
 layout: post
 title: "Rx part 2: Observable and Observer"
 categories: reactive
+image: "https://farm5.staticflickr.com/4280/35347983512_8a315ffeea_o_d.jpg"
+tags: [android, java, kotlin, swift, rx]
 ---
 
 Observer and Observable are the main objects in RX.
-## 1. Observable
+## Observable
 Observable like a publisher, It's role is to push data/event to all it's subscriber(observer). RX support 3 type of event to push: 
 
 - onNext(data) for emitting data.
 - onError(error) for emmiting error event.
 - onComplete() for emmiting complete function with no data. 
 
-## 2. Observer
+<!--more-->
+## Observer
 Observer like a subscriber, It will listen for the event that publisher(observable) pushed. Your observer have to implement onNext, onError and onComplete event. So, whenever it receive an event from observable, it will execute some code compatible with your observable implementation.
 
 - In RxJava

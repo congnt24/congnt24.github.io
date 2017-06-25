@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Rx part 3: Basic Operators</title>
-  <meta name="description" content="1. Filter Emit only those items from an Observable that pass a predicate test">
+  <meta name="description" content="Filter Emit only those items from an Observable that pass a predicate test The Filter operator filters an Observable by only allowing items through that pass...">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="http://localhost:4000/reactive/2017/06/24/rx-part-3-basic-operators.html">
@@ -68,6 +68,8 @@
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
+    
+    <img style="width: 100%;" src="https://farm5.staticflickr.com/4205/35384569371_71d868999a_o_d.jpg">
     <h1 class="post-title" itemprop="name headline">Rx part 3: Basic Operators</h1>
     <p class="post-meta">
       <time datetime="2017-06-24T00:00:00+07:00" itemprop="datePublished">
@@ -78,12 +80,14 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="1-filter">1. Filter</h2>
+    <h2 id="filter">Filter</h2>
 <p>Emit only those items from an Observable that pass a predicate test</p>
 
-<p><img src="https://qiita-image-store.s3.amazonaws.com/0/59803/ea70f5e1-567b-75cf-6043-71fd27d7387e.png" alt="Filter" /></p>
-
 <p>The Filter operator filters an Observable by only allowing items through that pass a test that you specify in the form of a predicate function.</p>
+
+<!--more-->
+
+<p><img class="post-image" src="https://qiita-image-store.s3.amazonaws.com/0/59803/ea70f5e1-567b-75cf-6043-71fd27d7387e.png" alt="Filter" /></p>
 
 <p>Example:</p>
 
@@ -92,11 +96,12 @@
 </code></pre>
 </div>
 
-<h2 id="2-map">2. Map</h2>
-<p>Transform the items emitted by an Observable by applying a function to each item
-<img src="https://i.stack.imgur.com/P6C2t.png" alt="Map" /></p>
+<h2 id="map">Map</h2>
+<p>Transform the items emitted by an Observable by applying a function to each item</p>
 
-<p>Example:</p>
+<p><img class="post-image" src="https://i.stack.imgur.com/P6C2t.png" alt="Map" /></p>
+
+<p><strong>Example:</strong></p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>Observable.just(1,2,3,4,5,6).map { it * 2 } //RxKotlin
 Observable.from([1,2,3,4,5,6]).map{ $0 * 2 } //RxSwift
@@ -112,9 +117,10 @@ Observable.from([1,2,3,4,5,6]).map{ $0 * 2 } //RxSwift
 </div>
 
 <p>When you using map operator for this list, you can only transform Array -&gt; Array. So, you can’t multiple to 2 for each Number. In this case, instead of map, we use flatMap.</p>
-<h2 id="3-flatmap">3. FlatMap</h2>
-<p>Transform the items emitted by an Observable into Observables, then flatten the emissions from those into a single Observable
-<img src="http://reactivex.io/documentation/operators/images/flatMap.c.png" alt="FlatMap" /></p>
+<h2 id="flatmap">FlatMap</h2>
+<p>Transform the items emitted by an Observable into Observables, then flatten the</p>
+
+<p><img class="post-image" src="http://reactivex.io/documentation/operators/images/flatMap.c.png" alt="Flatmap" /></p>
 
 <p>RxSwift</p>
 
@@ -134,7 +140,7 @@ Observable.from([1,2,3,4,5,6]).map{ $0 * 2 } //RxSwift
 
 <p>Inside flatmap, you have to return an Observable instead of Object.</p>
 
-<h2 id="4-switchmap--flatmaplatest">4. SwitchMap &amp; FlatMapLatest</h2>
+<h2 id="switchmap--flatmaplatest">SwitchMap &amp; FlatMapLatest</h2>
 <p>SwitchMap in RxJava very similar to FlatMapLatest in RxSwift.
 I have an example: I have an SearchBox and using Rx to handle text change event of the SearchBox. Whenever a new char is appended to the box, the observable emit an item(current string in box). Each item received, I using flatMap to request to server and get response.</p>
 
@@ -149,7 +155,7 @@ I have an example: I have an SearchBox and using Rx to handle text change event 
 
 <p>That’s why SwitchMap/FlatMapLatest was born. If It receive a new item while processing other item, the older item will be cancel and execute newer item.</p>
 
-<p><img src="https://i.stack.imgur.com/Tn8KA.png" alt="SwitchMap" /></p>
+<p><img class="post-image" src="https://i.stack.imgur.com/Tn8KA.png" alt="switchMap" /></p>
 
 <p>Example:</p>
 
@@ -177,7 +183,34 @@ Observable.just(1,2,3,4).switchMap { fetchData(it) }
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list">
+
+        <ul class="social-media-list">
+        <li>
+          Contact me
+        </li>
+        <li>
+        <a href="https://www.linkedin.com/in/cong-nguyen-03a873137/"><img style="width: 48px;" alt="linkedin" src="https://farm5.staticflickr.com/4284/35129905270_a8e8b80c31_o_d.png"></a>
+        <a href="https://twitter.com/congnt24"><img style="width: 48px;" alt="twitter" src="https://farm5.staticflickr.com/4238/35349259912_f3de153521_o_d.png"></a>
+        <a href="mailto:congnt24@hotmail.com"><img style="width: 48px;" alt="add skype me: congnt24@hotmail.com" src="https://farm5.staticflickr.com/4237/35129905210_c97a147c6d_o_d.png"></a>
+        <a href="https://github.com/congnt24"><img style="width: 48px;" alt="github" src="https://farm5.staticflickr.com/4236/35349260532_09d8902307_o_d.png"></a>
+        <a href="mailto:congnt24@gmail.com"><img style="width: 48px;" alt="gmail" src="https://farm5.staticflickr.com/4239/35129905300_f88c8fb52d_o_d.png"></a>
+        
+        
+        </li>
+          <!-- 
+          <li>
+            <a href="https://github.com/congnt24"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">congnt24</span></a>
+
+          </li>
+          
+
+           -->
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+      <ul class="contact-list">
           <li>
             
               Cong Nguyen
@@ -186,20 +219,6 @@ Observable.just(1,2,3,4).switchMap { fetchData(it) }
             
             <li><a href="mailto:congnt24@gmail.com">congnt24@gmail.com</a></li>
             
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-          <li>
-            <a href="https://github.com/congnt24"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
-</span><span class="username">congnt24</span></a>
-
-          </li>
-          
-
-          
         </ul>
       </div>
 

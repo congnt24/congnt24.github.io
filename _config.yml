@@ -17,6 +17,8 @@ minima:
 #header_pages:
 # - about.html
 
+excerpt_separator: "<!--more-->"
+
 # Build settings
 markdown: kramdown
 theme: minima
@@ -26,4 +28,5 @@ exclude:
 # Seo
 gems:
   - jekyll-seo-tag
+
 

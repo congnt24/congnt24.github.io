@@ -2,9 +2,11 @@
 layout: post
 title: "Rx part 4: Creat Observable"
 categories: reactive
+image: "https://farm5.staticflickr.com/4280/35347983512_8a315ffeea_o_d.jpg"
+tags: [android, java, kotlin, swift, rx]
 ---
 
-## 1. Observable.just(element)
+## Observable.just(element)
 In RxJava, Observable.just() will emit each parameters. The max params is 10
 
 ```java
@@ -16,15 +18,15 @@ In RxSwift, Observable.just() only emit one time
 ```swift
 Onservable.just(1,2,3) // Will emit onNext(1,2,3) and onComplete()
 ```
-
-## 2. Observable.from(array)
+<!--more-->
+## Observable.from(array)
 Using it when you have an array and you want to emit each item in the array
 
 ```swift
 Observale.from([1,2,3]) // Will emit onNext(1), onNext(2), onNext(3), onComplete()
 ```
 
-## 3. Observable.interval
+## Observable.interval
 Create an Observable that emits a sequence of integers spaced by a given time interval.
 The below statement will emit data each 1s.
 
@@ -43,10 +45,11 @@ Observable<Int>.interval(1, scheduler: MainScheduler.instance)
     .subscribe(onNext: { i in print("Hello world") })
 ```
 
-## 4. Observable.defer
+## Observable.defer
 Do not create the Observable until a Subscriber subscribes; create a fresh Observable on each subscription
 
-![Defer](http://reactivex.io/documentation/operators/images/defer.c.png)
+
+<img class="post-image" src="http://reactivex.io/documentation/operators/images/defer.c.png" alt="Defer"/>
 
 The Defer operator waits until an observer subscribes to it, and then it generates an Observable, typically with an Observable factory function. It does this afresh for each subscriber, so although each subscriber may think it is subscribing to the same Observable, in fact each subscriber gets its own individual sequence.
 
@@ -71,12 +74,12 @@ ob.subscribe(onNext: { print($0) })
 
 ```
 
-## 5. Observable.create
+## Observable.create
 You can create an Observable from scratch by using the Create operator. You pass this operator a function that accepts the observer as its parameter. Write this function so that it behaves as an Observable — by calling the observer’s onNext, onError, and onCompleted methods appropriately.
 
 A well-formed finite Observable must attempt to call either the observer’s onCompleted method exactly once or its onError method exactly once, and must not thereafter attempt to call any of the observer’s other methods.
 
-Example:
+**Example:**
 
 In RxJava / RxKotlin
 
@@ -96,7 +99,7 @@ observable.subscribe({ println(it) })
 In RxSwift is similar.
 
 
-## 6. Other
+## Other
 Here are some other way to create observable:
 
 - [Observable.never()](http://reactivex.io/RxJava/javadoc/rx/Observable.html#never())

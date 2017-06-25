@@ -6,7 +6,36 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list">
+
+        <ul class="social-media-list">
+        <li>
+          Contact me
+        </li>
+        <li>
+        <a href="https://www.linkedin.com/in/cong-nguyen-03a873137/"><img style="width: 48px;" alt="linkedin" src="https://farm5.staticflickr.com/4284/35129905270_a8e8b80c31_o_d.png"></a>
+        <a href="https://twitter.com/congnt24"><img style="width: 48px;" alt="twitter" src="https://farm5.staticflickr.com/4238/35349259912_f3de153521_o_d.png"></a>
+        <a href="mailto:congnt24@hotmail.com"><img style="width: 48px;" alt="add skype me: congnt24@hotmail.com" src="https://farm5.staticflickr.com/4237/35129905210_c97a147c6d_o_d.png"></a>
+        <a href="https://github.com/congnt24"><img style="width: 48px;" alt="github" src="https://farm5.staticflickr.com/4236/35349260532_09d8902307_o_d.png"></a>
+        <a href="mailto:congnt24@gmail.com"><img style="width: 48px;" alt="gmail" src="https://farm5.staticflickr.com/4239/35129905300_f88c8fb52d_o_d.png"></a>
+        
+        
+        </li>
+          <!-- {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <li>
+            {% include icon-twitter.html username=site.twitter_username %}
+          </li>
+          {% endif %} -->
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+      <ul class="contact-list">
           <li>
             {% if site.author %}
               {{ site.author | escape }}
@@ -17,22 +46,6 @@
             {% if site.email %}
             <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
         </ul>
       </div>
 

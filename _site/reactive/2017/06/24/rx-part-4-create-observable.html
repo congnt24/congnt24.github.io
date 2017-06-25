@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Rx part 4: Creat Observable</title>
-  <meta name="description" content="1. Observable.just(element) In RxJava, Observable.just() will emit each parameters. The max params is 10">
+  <meta name="description" content="Observable.just(element) In RxJava, Observable.just() will emit each parameters. The max params is 10 Observable.just(1,2,3) // Will emit onNext(1), onNext(2...">
 
   <link rel="stylesheet" href="/assets/main.css">
   <link rel="canonical" href="http://localhost:4000/reactive/2017/06/24/rx-part-4-create-observable.html">
@@ -68,6 +68,8 @@
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
+    
+    <img style="width: 100%;" src="https://farm5.staticflickr.com/4280/35347983512_8a315ffeea_o_d.jpg">
     <h1 class="post-title" itemprop="name headline">Rx part 4: Creat Observable</h1>
     <p class="post-meta">
       <time datetime="2017-06-24T00:00:00+07:00" itemprop="datePublished">
@@ -78,7 +80,7 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="1-observablejustelement">1. Observable.just(element)</h2>
+    <h2 id="observablejustelement">Observable.just(element)</h2>
 <p>In RxJava, Observable.just() will emit each parameters. The max params is 10</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">Observable</span><span class="o">.</span><span class="na">just</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">)</span> <span class="c1">// Will emit onNext(1), onNext(2), onNext(3), onComplete()</span>
@@ -90,15 +92,15 @@
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">Onservable</span><span class="o">.</span><span class="nf">just</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1">// Will emit onNext(1,2,3) and onComplete()</span>
 </code></pre>
 </div>
-
-<h2 id="2-observablefromarray">2. Observable.from(array)</h2>
+<!--more-->
+<h2 id="observablefromarray">Observable.from(array)</h2>
 <p>Using it when you have an array and you want to emit each item in the array</p>
 
 <div class="language-swift highlighter-rouge"><pre class="highlight"><code><span class="kt">Observale</span><span class="o">.</span><span class="nf">from</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1">// Will emit onNext(1), onNext(2), onNext(3), onComplete()</span>
 </code></pre>
 </div>
 
-<h2 id="3-observableinterval">3. Observable.interval</h2>
+<h2 id="observableinterval">Observable.interval</h2>
 <p>Create an Observable that emits a sequence of integers spaced by a given time interval.
 The below statement will emit data each 1s.</p>
 
@@ -117,10 +119,10 @@ The below statement will emit data each 1s.</p>
 </code></pre>
 </div>
 
-<h2 id="4-observabledefer">4. Observable.defer</h2>
+<h2 id="observabledefer">Observable.defer</h2>
 <p>Do not create the Observable until a Subscriber subscribes; create a fresh Observable on each subscription</p>
 
-<p><img src="http://reactivex.io/documentation/operators/images/defer.c.png" alt="Defer" /></p>
+<p><img class="post-image" src="http://reactivex.io/documentation/operators/images/defer.c.png" alt="Defer" /></p>
 
 <p>The Defer operator waits until an observer subscribes to it, and then it generates an Observable, typically with an Observable factory function. It does this afresh for each subscriber, so although each subscriber may think it is subscribing to the same Observable, in fact each subscriber gets its own individual sequence.</p>
 
@@ -145,12 +147,12 @@ The below statement will emit data each 1s.</p>
 </code></pre>
 </div>
 
-<h2 id="5-observablecreate">5. Observable.create</h2>
+<h2 id="observablecreate">Observable.create</h2>
 <p>You can create an Observable from scratch by using the Create operator. You pass this operator a function that accepts the observer as its parameter. Write this function so that it behaves as an Observable — by calling the observer’s onNext, onError, and onCompleted methods appropriately.</p>
 
 <p>A well-formed finite Observable must attempt to call either the observer’s onCompleted method exactly once or its onError method exactly once, and must not thereafter attempt to call any of the observer’s other methods.</p>
 
-<p>Example:</p>
+<p><strong>Example:</strong></p>
 
 <p>In RxJava / RxKotlin</p>
 
@@ -169,7 +171,7 @@ The below statement will emit data each 1s.</p>
 
 <p>In RxSwift is similar.</p>
 
-<h2 id="6-other">6. Other</h2>
+<h2 id="other">Other</h2>
 <p>Here are some other way to create observable:</p>
 
 <ul>
@@ -196,7 +198,34 @@ The below statement will emit data each 1s.</p>
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list">
+
+        <ul class="social-media-list">
+        <li>
+          Contact me
+        </li>
+        <li>
+        <a href="https://www.linkedin.com/in/cong-nguyen-03a873137/"><img style="width: 48px;" alt="linkedin" src="https://farm5.staticflickr.com/4284/35129905270_a8e8b80c31_o_d.png"></a>
+        <a href="https://twitter.com/congnt24"><img style="width: 48px;" alt="twitter" src="https://farm5.staticflickr.com/4238/35349259912_f3de153521_o_d.png"></a>
+        <a href="mailto:congnt24@hotmail.com"><img style="width: 48px;" alt="add skype me: congnt24@hotmail.com" src="https://farm5.staticflickr.com/4237/35129905210_c97a147c6d_o_d.png"></a>
+        <a href="https://github.com/congnt24"><img style="width: 48px;" alt="github" src="https://farm5.staticflickr.com/4236/35349260532_09d8902307_o_d.png"></a>
+        <a href="mailto:congnt24@gmail.com"><img style="width: 48px;" alt="gmail" src="https://farm5.staticflickr.com/4239/35129905300_f88c8fb52d_o_d.png"></a>
+        
+        
+        </li>
+          <!-- 
+          <li>
+            <a href="https://github.com/congnt24"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">congnt24</span></a>
+
+          </li>
+          
+
+           -->
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+      <ul class="contact-list">
           <li>
             
               Cong Nguyen
@@ -205,20 +234,6 @@ The below statement will emit data each 1s.</p>
             
             <li><a href="mailto:congnt24@gmail.com">congnt24@gmail.com</a></li>
             
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-          <li>
-            <a href="https://github.com/congnt24"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
-</span><span class="username">congnt24</span></a>
-
-          </li>
-          
-
-          
         </ul>
       </div>
 

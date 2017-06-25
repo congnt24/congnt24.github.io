@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rx part 2: Observable and Observer"
+title: "ReactiveX: Observable and Observer"
 categories: reactive
 image: "https://farm5.staticflickr.com/4280/35347983512_8a315ffeea_o_d.jpg"
 tags: [android, java, kotlin, swift, rx]

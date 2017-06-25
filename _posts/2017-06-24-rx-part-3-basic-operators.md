@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rx part 3: Basic Operators"
+title: "ReactiveX: Basic Operators"
 categories: reactive
 image: "https://farm5.staticflickr.com/4205/35384569371_71d868999a_o_d.jpg"
 tags: [android, java, kotlin, swift, rx]

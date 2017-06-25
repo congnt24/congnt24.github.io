@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rx part 1: Introduction to Rx"
+title: "ReactiveX: Introduction to Rx"
 categories: reactive
 image: "https://cdn-images-1.medium.com/max/2000/1*iVjIzql9k7PpwEUdb0phwQ.png"
 tags: [android, java, kotlin, swift, rx]

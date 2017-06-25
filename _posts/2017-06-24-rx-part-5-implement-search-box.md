@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rx part 5: Debounce, throttle and Implement search box"
+title: "ReactiveX: Debounce, throttle and Implement search box"
 categories: reactive
 comments: true
 image: "https://farm5.staticflickr.com/4216/35516906345_c6b858f9d0_o_d.jpg"

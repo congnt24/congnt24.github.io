@@ -20,7 +20,7 @@ minima:
 excerpt_separator: "<!--more-->"
 
 disqus:
-  shortname: congnt24.github.io
+  shortname: congnt24-github-io
 # Build settings
 markdown: kramdown
 theme: minima

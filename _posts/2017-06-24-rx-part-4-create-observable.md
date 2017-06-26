@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ReactiveX: Creat Observable"
+title: "ReactiveX: Create Observable"
 categories: reactive
 image: "https://farm5.staticflickr.com/4280/35347983512_8a315ffeea_o_d.jpg"
 tags: [android, java, kotlin, swift, rx]

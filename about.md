@@ -3,29 +3,29 @@ layout: page
 title: About
 permalink: /about/
 ---
-# About me
-![Avatar](https://farm5.staticflickr.com/4263/35080173910_7c5b6958c6_o_d.png)
+![Avatar](https://farm2.staticflickr.com/1797/28889484187_3b2668beb7_m_d.jpg)
 
-Hello there, I'm **Cong**, An **Mobile Developer** working in Vietnam at Hanoi.
+Hello there, I'm **Cong**, An **Developer** working in Vietnam.
 
-## Who?
+## I. Who Am I?
 
-My full name's **Nguyen Trung Cong**. I'm a mobile developer born & raised in Hanoi, a capital of Vietnam and currently working here.
+My full name's **Nguyen Trung Cong**. I'm a developer born & raised in Hanoi, and currently working here. I'm graduated from Hanoi University of Science and Technology in Software Engineering major.
 
-Fluent in Android/iOS development using Kotlin/Java/Swift3 and improving it every day. I also know nodejs and mongodb for building RESTful API.
+With many years working in companies, i learn a lot of technology and experience in developing, and now i'm fluent at some majority suck as backend(nodejs), frontend(reactjs), mobile development (Android(Kotlin/Java)/iOS(Swift)) and Devops.
 
-## What?
-### Vntrip app
-A mobile application for booking hotel in Vietnam with the cheapest in price but the best in service.
-### Bao hiem bao viet
-Mobile version of BaoVietOnline. 
-### Board
-Image social network application.
-### Livmo
-Read news from many source in one application.
-## Where?
-#### Vntrip OTA
-#### Altplus Inc
-#### Vietel Group
+## II. Road map
+- Curently: Fullstack Developer
+- 1 year:   +Devops
+- 2 years:  Manager
+- 3 years:  Tech Lead
 
-
+## III. Working Experience
+#### Vntrip OTA (2017-Present)
+06/2017: Android/iOS developer
+Present: Fullstack Developer
+#### BaoViet (outsourcing)
+Android Developer
+#### Altplus Inc (2015-10/2016)
+Unity/Android Developer
+#### Vietel Global (2014-2015)
+Internship, Java Developer

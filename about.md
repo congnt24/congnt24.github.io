@@ -5,7 +5,7 @@ permalink: /about/
 ---
 ![Avatar](https://farm2.staticflickr.com/1797/28889484187_3b2668beb7_m_d.jpg)
 
-Hello there, I'm **Cong**, An **Developer** working in Vietnam.
+Hello there, I'm **Cong**, A **Developer** working in Vietnam.
 
 ## I. Who Am I?
 
@@ -20,12 +20,12 @@ With many years working in companies, i learn a lot of technology and experience
 - 3 years:  Tech Lead
 
 ## III. Working Experience
-#### Vntrip OTA (2017-Present)
+### Vntrip OTA (2017-Present)
 06/2017: Android/iOS developer
 Present: Fullstack Developer
-#### BaoViet (outsourcing)
+### BaoViet (outsourcing)
 Android Developer
-#### Altplus Inc (2015-10/2016)
+### Altplus Inc (2015-10/2016)
 Unity/Android Developer
-#### Vietel Global (2014-2015)
+### Vietel Global (2014-2015)
 Internship, Java Developer

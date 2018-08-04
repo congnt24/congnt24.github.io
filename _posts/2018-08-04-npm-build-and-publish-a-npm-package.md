@@ -2,7 +2,7 @@
 layout: post
 title: "NPM: Build and publish a npm package"
 categories: backend
-image: "https://cdn-images-1.medium.com/max/2000/1*iVjIzql9k7PpwEUdb0phwQ.png"
+image: "http://techkids.vn/blog/wp-content/uploads/2017/06/NPM.jpg"
 tags: [backend, nodejs]
 ---
 

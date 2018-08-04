@@ -25,9 +25,54 @@ tags: [backend, nodejs, docker, contanier, microservice]
 ## III. Why you should dockerize your application
 
 ## IV. Setup
-### 1. Create simple nodejs service
+### 1. Create simple nodejs application
+```bash
+mkdir simplejs && cd simplejs
+npm init -y
+npm install express --save
+touch index.js
+```
+Edit index.js file using following code:
+```javascript
+let express = require('express');
+let app = express();
+let routes = express.Router();
+
+routes.get('/', function (req, res) {
+    res.send('Hello world!!');
+});
+
+app.use('/simplejs', routes);
+
+app.listen(3000, () => {
+    console.log('running')
+});
+```
+Then you can run your application using:
+```bash
+node index.js
+```
+Now, you can open your browser and open http://localhost:3000/simplejs. It will reponse *Hello World!*
+
 ### 2. Dockerfile
+Create a file called: Dockerfile then put the following code inside.
+```yaml
+FROM mhart/alpine-node:8.9.4
+# Create new image from a base image alpine-node
+WORKDIR /app
+ADD . /app
+# Copy all files to /app folder
+RUN npm install
+# Install all package: express
+EXPOSE 3000
+CMD ["node", "index.js"]
+```
+
 ### 3. Build Image and run application
+```bash
+docker build -t simplejs:v1.0 .
+docker run -p 3000:3000 simplejs:v1.0
+```
 ## V. Publish
 
 # REFERENCE

@@ -20,9 +20,15 @@ tags: [backend, nodejs, docker, contanier, microservice]
 
 **Dockerfile**: is a text document that contains all of the configuration information and commands needed to assemble a container image. With a Dockerfile, the Docker daemon can automatically build a container image.
 
-**Microservice**:
+**Microservice**: is an architectural style that structures an application as a collection of loosely coupled services, which implement business capabilities. The microservice architecture enables the continuous delivery/deployment of large, complex applications. It also enables an organization to evolve its technology stack.
 
-## III. Why you should dockerize your application
+## III. Why should you dockerize your application
+- Ease of use.
+- Speed: Docker containers are very lightweight and fast.
+- Modularity and Scalability: Docker makes it easy to break out your application’s functionality into individual containers.
+- CI/CD
+- Building microservice architecture
+- ...
 
 ## IV. Setup
 ### 1. Create simple nodejs application
@@ -52,7 +58,7 @@ Then you can run your application using:
 ```bash
 node index.js
 ```
-Now, you can open your browser and open http://localhost:3000/simplejs. It will reponse *Hello World!*
+Now, you can open your browser and open [http://localhost:3000/simplejs](http://localhost:3000/simplejs). It will reponse *Hello World!!*
 
 ### 2. Dockerfile
 Create a file called: Dockerfile then put the following code inside.
@@ -69,11 +75,21 @@ CMD ["node", "index.js"]
 ```
 
 ### 3. Build Image and run application
+Install docker then run the following commands to build an image.
 ```bash
 docker build -t simplejs:v1.0 .
+```
+To create a container from image created above.
+```bash
 docker run -p 3000:3000 simplejs:v1.0
 ```
+Now, you can open your browser and open [http://localhost:3000/simplejs](http://localhost:3000/simplejs). It will reponse *Hello World!!*
 ## V. Publish
-
+To publish your image to docker hub or other docker registry, you need an account that can create at [https://hub.docker.com/](https://hub.docker.com/)
+```bash
+docker login
+docker tag simplejs:v1.0 <username>/simplejs:v1.0
+docker push <username>/simplejs:v1.0
+```
 # REFERENCE
-https://github.com/congnt24/samplejs
+[https://github.com/congnt24/samplejs](https://github.com/congnt24/samplejs)

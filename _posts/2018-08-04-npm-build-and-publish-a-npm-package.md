@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NPM: Build local package and publish to npm"
+title: "NPM: Build and publish a npm package"
 categories: backend
 image: "https://cdn-images-1.medium.com/max/2000/1*iVjIzql9k7PpwEUdb0phwQ.png"
 tags: [backend, nodejs]
@@ -136,7 +136,7 @@ var flatWord = function (str, simple) {
 module.exports = flatWord;
 ```
 
-In **index.js** file, I export a function called to **module.exports**: flatWord.
+In **index.js** file, I export a function to **module.exports**: flatWord.
 # III. Test
 
 But we haven't publish to NPM yet. So, to test this module, we create a new project first, then using npm-link for testing purpose.
@@ -225,6 +225,11 @@ mkdir local-node-deburr && cd local-node-deburr
 npm init -y
 cp -R ../node-deburr .
 npm install ./node-deburr
+cat package.json
+# -...
+# - "dependencies": {
+# -    "node-deburr": "file:node-deburr"
+# -  }
 ```
 Now you can using syntax:
 ```javascript

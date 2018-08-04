@@ -7,12 +7,14 @@ tags: [backend, nodejs]
 ---
 
 ## I. Concept
-- Package: is a folder containing a program described by a package.json file.
-- Module: is a folder with a package.json file, wich contain main field, that enables loading the module with require() in a Node program.
-- The node_modules folder is the place Node.js looks for modules.
+- **Package:** is a folder containing a program described by a package.json file.
+- **Module:** is a folder with a package.json file, wich contain main field, that enables loading the module with require() in a Node program.
+- The **node_modules** folder is the place Node.js looks for modules.
+
+<!--more-->
 
 ## II. Setup
-In this article, i will create a module to replace all special characters in input string to ascii characters. Ex: Â->A, Ê->E...
+In this article, I will create a module to replace all special characters in input string to ascii characters. Ex: Â->A, Ê->E...
 ### 1. Create an empty project
 Use *npm init* to create an empty npm package or use *npm init --yes* for lazy init.
 ```bash

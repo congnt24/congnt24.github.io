@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-Aug 4, 2018
+Updated on Aug 4, 2018
 
 ![Avatar](https://farm2.staticflickr.com/1797/28889484187_3b2668beb7_m_d.jpg)
 

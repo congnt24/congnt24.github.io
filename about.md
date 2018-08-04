@@ -32,5 +32,5 @@ Unity/Android Developer
 ### Vietel Global (2014-2015)
 Internship, Java Developer
 
-## Interest
+## INTEREST
 Learning | Traveling | Challenging | Reading | Writing

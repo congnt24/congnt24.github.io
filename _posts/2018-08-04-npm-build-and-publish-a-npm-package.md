@@ -15,7 +15,7 @@ tags: [backend, nodejs]
 
 ## II. Setup
 In this article, I will create a module to replace all special characters in input string to ascii characters. Ex: Â->A, Ê->E...
-### 1. Create an empty project
+#### 1. Create an empty project
 Use *npm init* to create an empty npm package or use *npm init --yes* for lazy init.
 ```bash
 mkdir node-deburr && cd node-deburr
@@ -40,7 +40,7 @@ Your package.json file should look like this:
 By default, a main field will be created and it's entry point to your module. User can install your package by *require("node-deburr")*
 
 You can edit some field to make is personal suck as: description, author...
-### 2. Create entry point
+#### 2. Create entry point
 Now we have a package.json in folder, but we have not had entry point file to our module. Name of that file will be the value of main field in package.json file.
 Now we create index.js file
 ```bash

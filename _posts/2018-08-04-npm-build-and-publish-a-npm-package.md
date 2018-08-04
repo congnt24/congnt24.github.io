@@ -6,14 +6,14 @@ image: "http://techkids.vn/blog/wp-content/uploads/2017/06/NPM.jpg"
 tags: [backend, nodejs]
 ---
 
-# I. Concept
+## I. Concept
 - Package: is a folder containing a program described by a package.json file.
 - Module: is a folder with a package.json file, wich contain main field, that enables loading the module with require() in a Node program.
 - The node_modules folder is the place Node.js looks for modules.
 
-# II. Setup
+## II. Setup
 In this article, i will create a module to replace all special characters in input string to ascii characters. Ex: Â->A, Ê->E...
-## 1. Create an empty project
+### 1. Create an empty project
 Use *npm init* to create an empty npm package or use *npm init --yes* for lazy init.
 ```bash
 mkdir node-deburr && cd node-deburr
@@ -38,7 +38,7 @@ Your package.json file should look like this:
 By default, a main field will be created and it's entry point to your module. User can install your package by *require("node-deburr")*
 
 You can edit some field to make is personal suck as: description, author...
-## 2. Create entry point
+### 2. Create entry point
 Now we have a package.json in folder, but we have not had entry point file to our module. Name of that file will be the value of main field in package.json file.
 Now we create index.js file
 ```bash
@@ -137,7 +137,7 @@ module.exports = flatWord;
 ```
 
 In **index.js** file, I export a function to **module.exports**: flatWord.
-# III. Test
+## III. Test
 
 But we haven't publish to NPM yet. So, to test this module, we create a new project first, then using npm-link for testing purpose.
 
@@ -192,7 +192,7 @@ node index.js
 # - hom nay la thu may?
 ```
 
-# IV. Publish
+## IV. Publish
 After testing you module locally. It's time to publish your module to the world.
 To publish you have to had a npmjs.com account. If you not have any account, you can access to npmjs.com or using **npm adduser** to create your account.
 ```bash
@@ -216,7 +216,7 @@ npm publish
 # - node-deburr@2.0.0
 ```
 
-# V. Local dependency
+## V. Local dependency
 
 To install module locally, we create another project called *local-node-deburr* then copy node-deburr module to then using **npm install <path to node-deburr>** to install.
 ```bash

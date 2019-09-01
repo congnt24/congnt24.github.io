@@ -21,7 +21,7 @@ A brief overview about using junut5 and mockito to weite unit test.
 - JUnit is an annotation-based.
 ## 2. Dependencies
 
-```yaml
+```xml
 <!--Junit5-->
 <dependency>
     <groupId>org.junit.jupiter</groupId>

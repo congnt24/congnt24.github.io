@@ -2,7 +2,7 @@
 layout: post
 title: "ReactiveX: Basic Operators"
 categories: reactive
-image: "https://farm5.staticflickr.com/4205/35384569371_71d868999a_o_d.jpg"
+image: "https://cdn-images-1.medium.com/max/2000/1*iVjIzql9k7PpwEUdb0phwQ.png"
 tags: [android, java, kotlin, swift, rx]
 ---
 

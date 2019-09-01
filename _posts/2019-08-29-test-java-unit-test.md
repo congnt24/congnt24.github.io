@@ -19,6 +19,9 @@ A brief overview about using junut5 and mockito to weite unit test.
   * TestNG
   * JUnit is the most popular and widely used unit testing framework for Java.
 - JUnit is an annotation-based.
+
+<!--more-->
+
 ## 2. Dependencies
 
 ```xml

@@ -6,6 +6,9 @@ image: "https://rf3nt2hsbjj3mg90j4dgw7x6-wpengine.netdna-ssl.com/aus/wp-content/
 tags: [backend, java, test, unit, integrate]
 ---
 Integration Test is the phase in software testing in which individual software modules are combined and tested as a group. Integration testing is conducted to evaluate the compliance of a system or component with specified functional requirements
+
+<!--more-->
+
 ## 1. Integration Test in Java using maven-failsafe-plugin
 We use maven-failsafe-plugin to run integration test.
 For example:

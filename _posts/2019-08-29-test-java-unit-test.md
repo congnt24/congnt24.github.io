@@ -2,7 +2,7 @@
 layout: post
 title: "Test: Unit Test Java app with junit, mockito"
 categories: test
-image: "https://miro.medium.com/max/1200/1*3NDVbzYlOTLyRSrpay9uYw.png"
+image: "https://miro.medium.com/max/1400/1*X4lvnNBC7T3qjuWx007llw.png"
 tags: [backend, java, test, unit, integrate]
 ---
 A brief overview about using junut5 and mockito to weite unit test.
@@ -118,8 +118,9 @@ public class KafkaTests {
 
 ### 4. Mockito
 Mockito is a mocking framework, JAVA-based library that is used for effective unit testing of JAVA applications. Mockito is used to mock interfaces so that a dummy functionality can be added to a mock interface that can be used in unit testing.
-Here are some example of using mockito with junit 5:
-
+### 4.1 Using mockito
+We will use @ExtendWith(MockitoExtension.class) and @MockitoSettings(strictness = Strictness.LENIENT) annotations for your class test.
+Then using @Mock, @InjectMocks to mock object link below example:
 ```java
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
@@ -130,5 +131,26 @@ public class KafkaTests {
     Class2 class2;
     @InjectMocks
     MainClass main;
+    
+    @Test
+    public void method1_should_return_1(){
+        Mockito.when(class1.method1(any())).thenReturn(1);
+        Mockito.doNothing().when(class2).method2(anyString());
+        main.doSomethingMethod();
+    }
 }
 ```
+### 4.2 Declaring mock
+- To mock a method that have return value, use: when().thenReturn()
+- We can custom mock action by using thenAnswer(), you can do something in there and return a value.
+- To mock a void method we can use. doNothing().when(class).method(any());
+### 4.3 Verify mock
+- Verify the mock method is running how many time, and the params value we use: verify()
+
+For example:
+```java
+ Mockito.verify(service, Mockito.times(1)).save(Mockito.eq("123"), any());
+ Mockito.verify(service, Mockito.times(2)).query(123, 12);
+```
+
+---
